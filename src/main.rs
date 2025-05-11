@@ -1,7 +1,12 @@
 use std::io;
 
 fn main() {
-    println!("Guess the number!");
+    println!("Guess the number! Let me give you a hint...");
+
+    let x = 7;
+    let y = 2;
+    println!("x = {x} and y + 2 = {}", y + 2);
+
 
     println!("Please input your guess.");
 
