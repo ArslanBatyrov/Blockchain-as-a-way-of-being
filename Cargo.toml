@@ -3,5 +3,13 @@ name = "RustGitFolder"
 version = "0.1.0"
 edition = "2024"
 
+[[bin]]
+name = "main_program"
+path = "src/main.rs"
+
+[[bin]]
+name = "RbookChapter_3"  
+path = "src/rustBookCh3.rs"
+
 [dependencies]
 rand = "0.8.5"
