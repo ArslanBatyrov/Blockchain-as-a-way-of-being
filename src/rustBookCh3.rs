@@ -41,9 +41,45 @@
 // INTEGERS: signed can be negative(i8,16,32 etc). 
 
 // Signed integers are being stores in Rust by using a 2 complement method : Negative numbers flip 0 - 1 and vice versa then add 1. 
+// fn main() {
+//     let guess: u32 ="42".parse().expect("Not a number!");
+//     // Working with floating types
+//     let x = 2.0;
+//     let x: f32 = 3.0; //Picked a specfic configuration
+
+//     // discovering some basic math operations
+//     let sum = 5 + 10;
+
+//     let difference = 95.5 - 4.3;
+
+//     let product = 7 * 87;
+
+//     let quotient = 56.9 / 32.2;
+    
+//     let truncated = -5/3;
+
+//     let remainder = 43 % 6;
+
+//     // Boolean types
+
+//     let t = true;
+//     let f = false; //with explicit type annotation
+
+    
+// }
+
+
+// Next come compound types
+
+// there are 2 primitive copound types: tuples and arrays
+// Difference is that in an array all variable smust have the same type
 fn main() {
-    let guess: u32 ="42".parse().expect("Not a number!");
+    let tup = (500, 6.4, 1);
+
+    
+    let one = tup.2;
+
+    println!("The value of b is {one}");
+
 }
-
-
 
