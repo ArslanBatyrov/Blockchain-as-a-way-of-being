@@ -73,13 +73,5 @@
 
 // there are 2 primitive copound types: tuples and arrays
 // Difference is that in an array all variable smust have the same type
-fn main() {
-    let tup = (500, 6.4, 1);
 
-    
-    let one = tup.2;
-
-    println!("The value of b is {one}");
-
-}
 
