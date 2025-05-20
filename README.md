@@ -27,7 +27,7 @@ Additional resources will be documented as I discover them throughout my journey
 ├── rust-fundamentals/         # Basic Rust exercises and concepts
 ├── blockchain-concepts/       # Blockchain implementations in Rust
 ├── projects/                  # Complete blockchain projects
-│   ├── project-1/
+│   ├── Project 1: Try to build a functionality of Zcash on solidity as a demo using Rust
 │   ├── project-2/
 │   └── ...
 └── resources/                 # Useful links, notes, and references
