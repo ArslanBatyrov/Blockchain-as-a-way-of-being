@@ -76,18 +76,16 @@
 
 //Array in rust have fixed size
 
-// fn main() {
-//     let a = [1, 3, 5, 7, 9, 11];
+fn main() {
+    let a = [1, 3, 5, 7, 9, 11];
 
-//     let first = a[0] + 1;
-//     println!("{}", first);
-// }
+    let first = a[0] + 1;
+    println!("{}", first);
+}
 
 
 // Data types are fully covered.
 
 // Functions:
 
-fn main(){
-    
-}
+

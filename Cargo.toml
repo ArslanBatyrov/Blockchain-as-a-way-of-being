@@ -8,8 +8,12 @@ name = "main_program"
 path = "src/main.rs"
 
 [[bin]]
-name = "3"  
-path = "src/rustBookCh3.rs"
+name = "data_types"  
+path = "src/chapter3/data_types.rs"
+
+[[bin]]
+name = "functions"  
+path = "src/chapter3/functions.rs"
 
 [dependencies]
 rand = "0.8.5"
