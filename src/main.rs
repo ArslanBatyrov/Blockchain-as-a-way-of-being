@@ -3,6 +3,7 @@ use std::cmp::Ordering;
 
 use rand::Rng;
 
+// This is a code of a guessing game
 fn main() {
     println!("Guess the number! Let me give you a hint: between 1-100 (Inclusive)");
 
