@@ -74,6 +74,20 @@
 // there are 2 primitive copound types: tuples and arrays
 // Difference is that in an array all variable smust have the same type
 
-fn main() {
-    let a = [1, 2, 3, 4, 5]; //the same data type in an array 
+//Array in rust have fixed size
+
+// fn main() {
+//     let a = [1, 3, 5, 7, 9, 11];
+
+//     let first = a[0] + 1;
+//     println!("{}", first);
+// }
+
+
+// Data types are fully covered.
+
+// Functions:
+
+fn main(){
+    
 }
