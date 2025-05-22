@@ -16,14 +16,16 @@ fn main_if() {
 
             // exploring loops in Rust
 
-fn main_loops() {
-    // loop {
-    //     println!("Ave! Life is neutral.");
-    //     let counter = 1;
+
+            //This loop will be printing infinitely
+// //fn main_loops() {
+//     loop {
+//         println!("Ave! Life is neutral."); 
+//         let counter = 1;
 
 
-    //     if counter == 5 {
-    //         break;
-    //     }
-    // }
-}
+//         if counter == 5 {
+//             break;
+//         }
+//     }
+// }
