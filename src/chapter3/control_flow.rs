@@ -18,14 +18,61 @@ fn main_if() {
 
 
             //This loop will be printing infinitely
-// //fn main_loops() {
-//     loop {
-//         println!("Ave! Life is neutral."); 
-//         let counter = 1;
 
 
-//         if counter == 5 {
-//             break;
+// fn main_loops() {
+//     let mut counter = 0;
+
+//     let result = 'my_first_loop_label: loop {
+//         counter += 1;
+
+//         if counter == 10 {
+//             break counter * 2;
 //         }
+//     };
+
+//     println!("The result is {result}");
+// }
+
+
+                //Condiitonal loops
+
+// fn main(){
+//     let mut number = 5;
+
+//     while number != 0 {
+//         println!("{number}");
+
+//         number -= 1;
+//     }
+
+//     println!("LIFTOFFFFFFFF!")
+// }
+
+
+            // looping though Arrays here
+// fn main(){
+//     let a = [10,50,100,200];
+    
+//     let mut index = 0;
+
+//     while index < 5 {
+//         println!("Your value is: {}", a[index]);
+
+//         index +=1;
 //     }
 // }
+
+            // looping though Array: Way 2
+
+
+fn main(){
+    let a = [10,50,100,200];
+
+    for element in a {
+        println!("the value is: {element}");
+    }
+}
+
+
+// Ch3 is officially completeD!s 
