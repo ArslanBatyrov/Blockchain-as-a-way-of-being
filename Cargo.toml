@@ -19,5 +19,9 @@ path = "src/chapter3/functions.rs"
 name = "control_flow"  
 path = "src/chapter3/control_flow.rs"
 
+[[bin]]
+name = "experimentation3"  
+path = "src/chapter3/experimentation3.rs"
+
 [dependencies]
 rand = "0.8.5"
