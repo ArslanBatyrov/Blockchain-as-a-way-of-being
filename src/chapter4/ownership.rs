@@ -1,0 +1,1 @@
+// ownership is uniquely Rust concept. Every single varibale owns the specific assigned data, this helps to get rid of the garbarge collector
