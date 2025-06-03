@@ -31,6 +31,9 @@ path = "src/FirstLayer1/block.rs"
 name = "mainB"  
 path = "src/FirstLayer1/main_block.rs"
 
+[[bin]]
+name = "week1"  
+path = "src/SolanaXEncode/week1.rs"
 
 [dependencies]
 rand = "0.8.5"
