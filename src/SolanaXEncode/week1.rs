@@ -61,5 +61,42 @@ fn my_func(a: u32) -> bool {
     if a ==0 {
         return false;
     }
-    a == 7
+    a == 7 // This piece will return whether a is 7 or not
+    // we already specified boolean return with ->
+}
+
+
+// Control flow
+
+// if is an expression not a statement. SO it will always return value
+
+fn main(){
+    let condition = true;
+    let number = if condition {5} else {6}; //here if literally retuns 5 as 
+    //it is an expression
+
+    println!("The value pf number is {:?}", number);
+}
+
+// Next: what is an option
+
+// options make code well designed. It is an enum defined within a standard library
+
+
+// New way of coding for Rust --> Matching
+
+//Example
+
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+}
+
+fn value_in_cents(coin: Coin) -> u8 {
+    match coin {
+        Coin::Penny =>1,
+        Coin::Nickel =>5,
+        Coin::Dime =>10,
+    }
 }
