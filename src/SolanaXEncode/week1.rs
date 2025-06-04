@@ -157,3 +157,28 @@ let c = a: // Mistake is here as a value is empty, non existent
 
 
 
+//use  referneces instead of moves
+
+// without references we would be transferring ownership all the time
+
+// referneces allow to interact with the value without owning it
+// Rule: reference itself must not outlive the value you are referring to
+
+
+// There are 2 times of references: Shares and Mutable. 
+// Both do not take ownership
+
+//Shared Reference example: Read but not mutate the thing we are referring to
+// mutable reference: We modify the thing we are referring to.
+// Only 1 mutable reference at 1 time can be used. Shared: Unlimited
+// &mut -> Used to declare a mutable reference
+
+
+fn main() {
+    let mut s = "Hello";
+    let s1 = &mut s;
+
+    
+
+}
+
