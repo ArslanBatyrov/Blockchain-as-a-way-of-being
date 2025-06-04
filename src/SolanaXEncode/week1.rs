@@ -115,3 +115,45 @@ fn main() {
     let six = plus_one(five);
     let none = plus_one(None);
 } // Here we matched option enum. 
+
+
+//----------------------------------------------------------
+
+// Day 3: Socialisation with teammates + Rust
+
+// Rustlings - set of exercises to learn Rust
+// Rust by example: LEarning rust by imitatin
+
+
+
+// Rust impose rules that you need to follow at a compile time. No the run time
+
+
+
+// Next Topic: Ownership
+
+let mut my_vec = vec![1,2,3]; // -> The my_vec owns the vector now
+
+// things to avoid:
+// 1. Vector should not go out of scope
+
+// As soon as variable goes out of scope, the value of the variable is dropped:
+
+fn mainn(){
+    {
+        let a = 2; // This value exists only till
+    }// this point
+
+    // here that value is dropped
+}
+
+
+// Moves: If we try to reassign the comples data types, we do not copy, we move
+
+let a = vec![1,2,3];
+let b = a;
+let c = a: // Mistake is here as a value is empty, non existent
+// as value was moved to b
+
+
+
