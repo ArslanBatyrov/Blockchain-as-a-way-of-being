@@ -174,11 +174,26 @@ let c = a: // Mistake is here as a value is empty, non existent
 // &mut -> Used to declare a mutable reference
 
 
+//Example of mutable references or borrowing
 fn main() {
-    let mut s = "Hello";
+    let mut s = String::from("Hello");
     let s1 = &mut s;
 
-    
+    s1.push_str("bootcamp"); // s1 does not own the "Hello", it just mutates it
+
 
 }
+
+
+// You can dereference with *
+
+
+// Next: traits
+// What are traits? 
+
+// define the beahviour that data types have
+
+pub trait Summary {
+    fn summarise(&self) -> String;
+} // this is how we define traits
 
