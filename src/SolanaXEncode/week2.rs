@@ -53,6 +53,30 @@ imp Details for AccountA {
 // Ethereum is not here yet
 
 
+// While you write programs, use modules. Multiple files.
+
+// This is a best practice:
+// lib.rs : Registering entrpoint.rs; instruction.rs(deserialisation of instruction)
+// processor.rs (program logic), error.rs : Specific errors
+
+// Rust - Lifetimes
+
+//every single reference in Rust has a lifetime, whish is the
+//scope for which that reference is valid.
+
+//for exmaple: 
+
+fn main(){
+    let r;
+    {
+        let x = 5;
+        r = &x;
+    }
+
+    println!("r: {}",r);
+} // will  create an error oas x is out of scope after 
+
+
 
 
 
