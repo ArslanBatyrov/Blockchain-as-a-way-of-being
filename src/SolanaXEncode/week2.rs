@@ -46,7 +46,11 @@ imp Details for AccountA {
 
 // There are 2 data accounts: System owned account and PDA(Program Derived Accounts)
 
+// Sealevel: PAraller processing of smart contracts
 
+// Adds complexity
+// each instruction tells the VM which account it wants to read and write in advance
+// Ethereum is not here yet
 
 
 
