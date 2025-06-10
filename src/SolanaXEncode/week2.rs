@@ -12,7 +12,7 @@ pub fn process_instruction(
 //----------
 // TO LEARN POST LESSON:
 // Learn the nuacnes of serialisation and deserialisation
-
+// Ideas from vitalik to build, just have a look
 
 //-----------
 
@@ -76,6 +76,24 @@ fn main(){
     println!("r: {}",r);
 } // will  create an error oas x is out of scope after 
 
+
+// ' is a lifetime annotation, for example &'i32; 
+
+
+// when you are creating a project and limit the scope of the project to bare absolute minimum
+// as people start usng your prokect it will change how you want to change and addnew functionality
+//MVP
+
+
+// Day 5 of the bootcamp: Trying to understand!!!
+//-------
+// Talk to joseph
+// Talk to joseph about impermanent loss
+// IL= change in the price of the token as out price changes
+// Yield farming lending made availbale for the majority
+// Flash Loans
+// What is Composability:
+// 
 
 
 

@@ -197,3 +197,14 @@ pub trait Summary {
     fn summarise(&self) -> String;
 } // this is how we define traits
 
+
+
+
+// Day 4(that I missed.) Self Study
+
+// Slide 1: Lifetime constraints on references
+// realised that to understand lesson 4 I must go through 1,2,3 better and i depth
+
+
+
+
