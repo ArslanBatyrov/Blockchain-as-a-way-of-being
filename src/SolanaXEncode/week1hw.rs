@@ -12,21 +12,35 @@
 
 // Next: Structs Revision
 
-struct Man {
-    height: u64,
-    name: String,
-    age: u64,
-}
+// struct Man {
+//     height: u64,
+//     name: String,
+//     age: u64,
+// }
 
 
-impl Man {
-    fn birthday(&mut self){
-      self.age += 1;
-      println!("Happy {}th birthday, {}!", self.age, self.name);  
-    }
-}
+// impl Man {
+//     fn birthday(&mut self){
+//       self.age += 1;
+//       println!("Happy {}th birthday, {}!", self.age, self.name);  
+//     }
+// }
+
+// fn main() {
+//     let mut arslan = Man { name: "Arslan".into(), age: 20, height: 188,};
+//     arslan.birthday();
+// }
+
+
+// Next: Vectors: 
+// Vectors can only store the vlaue of the similar type
+
+
 
 fn main() {
-    let mut arslan = Man { name: "Arslan".into(), age: 20, height: 188,};
-    arslan.birthday();
+    let mut v = vec![1, 2, 3];
+    v.push(19);
+
+    let forth = &v[3];
+   println!("{forth}");
 }
