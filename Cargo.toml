@@ -35,6 +35,19 @@ path = "src/FirstLayer1/main_block.rs"
 name = "week1"  
 path = "src/SolanaXEncode/week1.rs"
 
+[[bin]]
+name = "week1hw"  
+path = "src/SolanaXEncode/week1hw.rs"
+
+[[bin]]
+name = "week2"  
+path = "src/SolanaXEncode/week2.rs"
+
+
+[[bin]]
+name = "week2hw"  
+path = "src/SolanaXEncode/week2hw.rs"
+
 [dependencies]
 rand = "0.8.5"
 serde        = { version = "1.0", features = ["derive"] }
