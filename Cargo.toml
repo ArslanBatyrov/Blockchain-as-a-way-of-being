@@ -43,6 +43,9 @@ path = "src/SolanaXEncode/week1hw.rs"
 name = "week2"  
 path = "src/SolanaXEncode/week2.rs"
 
+[[bin]]
+name = "week3"  
+path = "src/SolanaXEncode/week3.rs"
 
 [[bin]]
 name = "week2hw"  

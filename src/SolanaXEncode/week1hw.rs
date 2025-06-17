@@ -37,10 +37,30 @@
 
 
 
-fn main() {
-    let mut v = vec![1, 2, 3];
-    v.push(19);
+// fn main() {
+//     let mut v = vec![1, 2, 3];
+//     v.push(19);
 
-    let forth = &v[3];
-   println!("{forth}");
+//     let forth = &v[3];
+//    println!("{forth}");
+// }
+
+
+// // revising range 
+// for n in 1..101{ 
+
+// }  // inclusive start, exlusive end
+
+// for n in 1..=101{
+
+// } // enclusive start and end
+
+// Next:  revising Enums
+
+enum Fruit {
+    Apple,
+    Orange,
+    Grape,
 }
+
+Fruit::Orange
