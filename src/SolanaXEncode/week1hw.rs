@@ -84,3 +84,25 @@
 // let mut my_vec = vec![1, 2, 3];
 
 
+//Next: covering references
+
+// Reference must not outlive the referrent
+// There are 2 types of references mutable ans shared
+// using refernece to a value is called borrowing!
+
+
+// you can read hsared references but cannot mutate them
+//you can have as many shared referneces as you want
+
+// a mutable reference, mean you can read and modify the referent
+// if you have a mut ref to a value, you cannot have any other ref. Just one
+// This is called 'Mulitple readers or single writer' principle
+
+
+// Strings as Data types
+// Sting is stored on a heap, we can append literals to it
+// fn main(){
+// let mut title = String::from("Arslan's Rust Course");
+// title.push_str(" Will Go Well");
+// println!("{}", title); 
+// }
