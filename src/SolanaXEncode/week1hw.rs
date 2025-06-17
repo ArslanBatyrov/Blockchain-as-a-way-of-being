@@ -57,10 +57,17 @@
 
 // Next:  revising Enums
 
-enum Fruit {
-    Apple,
-    Orange,
-    Grape,
-}
+// enum Fruit {
+//     Apple,
+//     Orange,
+//     Grape,
+// }
 
-Fruit::Orange
+// Fruit::Orange
+
+// Next: Revising Options
+
+// opiton is an enum that we defined in a SL
+
+//Next: revising Matching
+
