@@ -2,12 +2,12 @@
 
 //for exmaple: 
 
-pub fn process_instruction(
-     _program_id: &Pubkey,
-     _accounts: &[AccountInfo],
-) {
+// pub fn process_instruction(
+//      _program_id: &Pubkey,
+//      _accounts: &[AccountInfo],
+// ) {
    
-}
+// }
 
 //----------
 // TO LEARN POST LESSON:
@@ -18,18 +18,18 @@ pub fn process_instruction(
 
 //traits help to specify the behaviour
 
-trait Details {
-    fn get_owner(&self) -> &Pubkey;
-    // fn get_admin(&self) --. etc
-}
+// trait Details {
+//     fn get_owner(&self) -> &Pubkey;
+//     // fn get_admin(&self) --. etc
+// }
 
 // implementations
 
-imp Details for AccountA {
-    gn get_owner(&self) -> &Pubkey {
-        &self.owner 
-    }
-}
+// imp Details for AccountA {
+//     gn get_owner(&self) -> &Pubkey {
+//         &self.owner 
+//     }
+// }
 
 
 // Lesson 5 begins of real week 2: 
@@ -66,14 +66,14 @@ imp Details for AccountA {
 
 //for exmaple: 
 
-fn main(){
-    let r;
-    {
-        let x = 5;
-        r = &x;
-    }
+// fn main(){
+//     let r;
+//     {
+//         let x = 5;
+//         r = &x;
+//     }
 
-    println!("r: {}",r);
+//     println!("r: {}",r);
 } // will  create an error oas x is out of scope after 
 
 
@@ -93,7 +93,8 @@ fn main(){
 // Yield farming lending made availbale for the majority
 // Flash Loans
 // What is Composability:
-// 
+
+
 
 
 

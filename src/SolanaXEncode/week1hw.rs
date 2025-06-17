@@ -71,3 +71,16 @@
 
 //Next: revising Matching
 
+// Revising memory management in Rust
+// mainly everyhting is stores on stack, if you store something on stack
+// the thing must have a fixed size, copying is cheap
+
+// For more complex items with,for example variabel size, we store them on the heap
+// We try to avoid copying from the heap
+
+// Revising Ownership:
+// variable owns a value
+
+// let mut my_vec = vec![1, 2, 3];
+
+
