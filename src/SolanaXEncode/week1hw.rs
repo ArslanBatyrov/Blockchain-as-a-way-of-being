@@ -180,16 +180,24 @@
 
 // Next: Covering iterators
 
-fn main() {
-        let v1 = vec![4, 7, 9];
-        let mut v1_iter = v1.iter();
+// fn main() {
+//         let v1 = vec![4, 7, 9];
+//         let mut v1_iter = v1.iter();
 
-        assert_eq!(v1_iter.next(), Some(&4));
-        assert_eq!(v1_iter.next(), Some(&7));
-        assert_eq!(v1_iter.next(), Some(&9));
-        assert_eq!(v1_iter.next(), None);
-    }
+//         assert_eq!(v1_iter.next(), Some(&4));
+//         assert_eq!(v1_iter.next(), Some(&7));
+//         assert_eq!(v1_iter.next(), Some(&9));
+//         assert_eq!(v1_iter.next(), None);
+//     }
 
+fn main(){
+    let numbers_into_bool = vec![1,2,3,4];
+    let pure_bool: Vec<bool> = numbers_into_bool
+    .iter()
+    .map(|x|x%2 != 0)
+    .collect();
+    println!("{:?}", pure_bool);
 
+}
 
 
