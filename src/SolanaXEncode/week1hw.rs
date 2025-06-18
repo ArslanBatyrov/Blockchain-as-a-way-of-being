@@ -106,3 +106,65 @@
 // title.push_str(" Will Go Well");
 // println!("{}", title); 
 // }
+
+
+// Revise: Traits. 
+
+// pub trait Summary{
+//         fn sumarise(&self) -> String;
+//     }
+
+//     pub struct  Tweet {
+//         pub username: String,
+//         pub content: String,
+//         pub reply: bool,
+//         pub retweet: bool, 
+//     }
+
+//     impl Summary for Tweet {
+//         fn summarize(&self) -> String {
+//             format!("{}: {}", self.username, self.content)
+//         }
+//     }
+
+//     fn main() {
+//     let tweet = Tweet {
+//         username: String::from("arslan"),
+//         content: String::from("Learning Rust is awesome!"),
+//         reply: false,
+//         retweet: false,
+//     };
+
+//     println!("{}", tweet.summarize());
+// }
+
+
+// revising traits by example
+// trait Greet {
+//     fn greet(&self) -> String;
+// }
+
+
+struct Car {
+    model: String,
+}
+
+
+
+trait Describe {
+    fn describe(&self) -> String;
+}
+
+impl Describe for Car {
+    fn describe(&self) -> String {
+        format!("This car is a {}", self.model)
+    }
+}
+
+fn main(){
+    let my_car = Car {model: String::from("Tesla Model S")};
+    println!("{}", my_car.describe());
+}
+
+
+
