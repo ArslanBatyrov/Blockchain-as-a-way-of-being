@@ -145,26 +145,37 @@
 // }
 
 
-struct Car {
-    model: String,
-}
+// struct Car {
+//     model: String,
+// }
 
 
 
-trait Describe {
-    fn describe(&self) -> String;
-}
+// trait Describe {
+//     fn describe(&self) -> String;
+// }
 
-impl Describe for Car {
-    fn describe(&self) -> String {
-        format!("This car is a {}", self.model)
-    }
-}
+// impl Describe for Car {
+//     fn describe(&self) -> String {
+//         format!("This car is a {}", self.model)
+//     }
+// }
+
+// fn main(){
+//     let my_car = Car {model: String::from("Tesla Model S")};
+//     println!("{}", my_car.describe());
+// }
+
+// next: Introduciton to vectors
+// the most used type of collections.
+
+// let v: Vec<i32> = Vec::new(); //cretead a new vector without using a macro
 
 fn main(){
-    let my_car = Car {model: String::from("Tesla Model S")};
-    println!("{}", my_car.describe());
-}
+    let mut v: Vec<i32> = Vec::new();
+    v.extend([2, 3, 7, 9, 23, 65]);
 
+    println!("{:?}",v)
+}
 
 
