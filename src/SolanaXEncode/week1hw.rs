@@ -171,11 +171,25 @@
 
 // let v: Vec<i32> = Vec::new(); //cretead a new vector without using a macro
 
-fn main(){
-    let mut v: Vec<i32> = Vec::new();
-    v.extend([2, 3, 7, 9, 23, 65]);
+// fn main(){
+//     let mut v: Vec<i32> = Vec::new();
+//     v.extend([2, 3, 7, 9, 23, 65]);
 
-    println!("{:?}",v)
-}
+//     println!("{:?}",v)
+// }
+
+// Next: Covering iterators
+
+fn main() {
+        let v1 = vec![4, 7, 9];
+        let mut v1_iter = v1.iter();
+
+        assert_eq!(v1_iter.next(), Some(&4));
+        assert_eq!(v1_iter.next(), Some(&7));
+        assert_eq!(v1_iter.next(), Some(&9));
+        assert_eq!(v1_iter.next(), None);
+    }
+
+
 
 
