@@ -190,14 +190,23 @@
 //         assert_eq!(v1_iter.next(), None);
 //     }
 
-fn main(){
-    let numbers_into_bool = vec![1,2,3,4];
-    let pure_bool: Vec<bool> = numbers_into_bool
-    .iter()
-    .map(|x|x%2 != 0)
-    .collect();
-    println!("{:?}", pure_bool);
+// fn main(){
+//     let numbers_into_bool = vec![1,2,3,4];
+//     let pure_bool: Vec<bool> = numbers_into_bool
+//     .iter()
+//     .map(|x|x%2 != 0)
+//     .collect();
+//     println!("{:?}", pure_bool);
 
-}
+// }
+
+// Next: Lesson 12. NFTs
+
+// What is an inscription
+
+// means to add the digital assets on the blockchain
+// the way to add asset data on chain
+
+
 
 
