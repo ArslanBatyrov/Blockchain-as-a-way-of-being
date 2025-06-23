@@ -236,44 +236,69 @@
 // Next: Slices
 
 
-use std::mem;
+// use std::mem;
 
-// This function borrows a slice
-fn analyze_slice(slice: &[i32]) {
-    println!("first element of the slice: {}", slice[0]);
-    println!("the slice has {} elements", slice.len());
-}
+// // This function borrows a slice
+// fn analyze_slice(slice: &[i32]) {
+//     println!("first element of the slice: {}", slice[0]);
+//     println!("the slice has {} elements", slice.len());
+// }
 
-fn main() {
-    // Fixed-size array (type signature is superfluous)
-    let xs: [i32; 5] = [1, 2, 3, 4, 5];
+// fn main() {
+//     // Fixed-size array (type signature is superfluous)
+//     let xs: [i32; 5] = [1, 2, 3, 4, 5];
 
-    // All elements can be initialized to the same value
-    let ys: [i32; 500] = [0; 500];
+//     // All elements can be initialized to the same value
+//     let ys: [i32; 500] = [0; 500];
 
-    // Indexing starts at 0
-    println!("first element of the array: {}", xs[0]);
-    println!("second element of the array: {}", xs[1]);
+//     // Indexing starts at 0
+//     println!("first element of the array: {}", xs[0]);
+//     println!("second element of the array: {}", xs[1]);
 
-    // `len` returns the count of elements in the array
-    println!("number of elements in array: {}", xs.len());
+//     // `len` returns the count of elements in the array
+//     println!("number of elements in array: {}", xs.len());
 
-    // Arrays are stack allocated
-    println!("array occupies {} bytes", mem::size_of_val(&xs));
+//     // Arrays are stack allocated
+//     println!("array occupies {} bytes", mem::size_of_val(&xs));
 
-    // Arrays can be automatically borrowed as slices
-    println!("borrow the whole array as a slice");
-    analyze_slice(&xs);
+//     // Arrays can be automatically borrowed as slices
+//     println!("borrow the whole array as a slice");
+//     analyze_slice(&xs);
 
-    // Slices can point to a section of an array
-    // They are of the form [starting_index..ending_index]
-    // starting_index is the first position in the slice
-    // ending_index is one more than the last position in the slice
-    println!("borrow a section of the array as a slice");
-    analyze_slice(&ys[1 .. 4]);
+//     // Slices can point to a section of an array
+//     // They are of the form [starting_index..ending_index]
+//     // starting_index is the first position in the slice
+//     // ending_index is one more than the last position in the slice
+//     println!("borrow a section of the array as a slice");
+//     analyze_slice(&ys[1 .. 4]);
 
-    // Out of bound indexing causes compile error
-    //println!("{}", xs[5]);
-}
+//     // Out of bound indexing causes compile error
+//     //println!("{}", xs[5]);
+// }
 
 
+// Next:  Error Handling
+// There is a difference between recoverable and unrecoverable errors.
+// rust distinguishes between the two types of errors.
+// Recoverable errors are handled using the Result type.
+
+// enum Result<T, E>
+// {
+//     Ok(T), Err(E),
+// }
+
+// // or we can use matching
+
+// let f = File::open("foo.txt");
+// let f = match f {
+//     Ok(file) => file,
+//     Err(error) => // Whatever error handling you have got
+// }
+
+// // we can use ? shortcut
+// let mut f = File::open("foo.txt")?;
+
+// // if the error is unrecoverable then we use a panic macro as it means that there
+// // is bug or weakness is found in the code
+
+// panic!("Your message about the bug");
