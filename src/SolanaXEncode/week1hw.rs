@@ -210,3 +210,22 @@
 
 
 
+// Next: Shadowing is the way to change the value of the immutable variables
+
+fn main() {
+    let y = 2;
+    let y = y * 9;
+
+    {
+        let y = y * 7;
+        println!("Here y is: {y}");
+    }
+
+    println!("Here y is: {y}");
+}
+
+
+
+
+
+
