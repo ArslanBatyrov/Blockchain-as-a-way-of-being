@@ -212,20 +212,26 @@
 
 // Next: Shadowing is the way to change the value of the immutable variables
 
-fn main() {
-    let y = 2;
-    let y = y * 9;
+// fn main() {
+//     let y = 2;
+//     let y = y * 9;
 
-    {
-        let y = y * 7;
-        println!("Here y is: {y}");
-    }
+//     {
+//         let y = y * 7;
+//         println!("Here y is: {y}");
+//     }
 
-    println!("Here y is: {y}");
+//     println!("Here y is: {y}");
+// }
+
+// Next: Lifetime constraints on references
+fn main(){
+let a = 2;
+{
+    let x = &a;
+    assert_eq!(*x, 4)
 }
-
-
-
+}
 
 
 
