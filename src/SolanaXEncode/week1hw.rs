@@ -302,3 +302,68 @@
 // // is bug or weakness is found in the code
 
 // panic!("Your message about the bug");
+
+
+// Next: Traits and you video, from Exercise 2, week 1
+
+
+fn main(){
+    struct Dwarf {
+        name: String,
+    }
+
+    struct Elf {
+        name: String,
+    }
+
+    struct HalfOrc {
+        name: String,
+    }
+
+     struct Human {
+        name: String,
+    }
+
+
+    let turkmen_dwarf = Dwarf{
+        name: String::from("JennetDwarf"),
+    };
+
+    let turkmen_halforc = HalfOrc{
+        name: String::from("SoltanHalfOrc")
+    };
+
+     let turkmen_elf = HalfOrc{
+        name: String::from("ArslanElf")
+    };
+
+     let turkmen = HalfOrc{
+        name: String::from("Sona")
+    };
+
+    
+
+    pub trait Constitution{
+        fn constitution_bonus(&self) -> u8{
+            0
+        }
+    }
+
+    impl Constitution for Dwarf {
+        fn constitution_bonus(&self) -> u8 {
+            2
+        }
+    }
+
+     impl Constitution for HalfOrc {
+        fn constitution_bonus(&self) -> u8 {
+            1
+        }
+    }
+
+   
+    turkmen.constitution_bonus();
+    turkmen_elf.constitution_bonus();
+    turkmen_halforc.constitution_bonus(); //returns 1
+    turkmen_dwarf.constitution_bonus(); // returns 2
+}
