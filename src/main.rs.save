@@ -1,0 +1,19 @@
+use std::env;
+
+mod homework;
+
+fn main() {
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() < 3 {
+        eprintln!("Usage: homework_rust homework 
+<number>");
+        return;
+    }
+
+    if args[1] == "homework" {
+        homework::run(&args[2]);
+    } else {
+        eprintln!("Unknown command: {}", args[1]);
+    }
+}

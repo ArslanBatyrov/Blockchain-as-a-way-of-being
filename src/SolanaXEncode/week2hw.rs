@@ -1,11 +1,14 @@
 // Here i will be revising the entire week 2
-//Exercise 1: 
-const a: i32 5;
-const b: i32 6;
-fn main(){
-if a > b {
-    a
-} else{
-    b
+//Exercise from lesson 5: 
+
+// functions1.rs
+// Make me compile! Execute `rustlings hint functions1` for hints :)
+
+// I AM NOT DONE
+fn call_me() {
+    println!("Call me!");
 }
+
+fn main() {
+    call_me();
 }
