@@ -307,63 +307,97 @@
 // Next: Traits and you video, from Exercise 2, week 1
 
 
-fn main(){
-    struct Dwarf {
-        name: String,
-    }
+// fn main(){
+//     struct Dwarf {
+//         name: String,
+//     }
 
-    struct Elf {
-        name: String,
-    }
+//     struct Elf {
+//         name: String,
+//     }
 
-    struct HalfOrc {
-        name: String,
-    }
+//     struct HalfOrc {
+//         name: String,
+//     }
 
-     struct Human {
-        name: String,
-    }
+//      struct Human {
+//         name: String,
+//     }
 
+//     struct HalfElf {
+//         name: String,
+//     }
 
-    let turkmen_dwarf = Dwarf{
-        name: String::from("JennetDwarf"),
-    };
+//     pub fn speak_elvish<T: Elvish>(character:T) -> String{
+//         String::from("yes")
+//     }
 
-    let turkmen_halforc = HalfOrc{
-        name: String::from("SoltanHalfOrc")
-    };
+//     pub trait Elvish {
 
-     let turkmen_elf = HalfOrc{
-        name: String::from("ArslanElf")
-    };
+//     }
 
-     let turkmen = HalfOrc{
-        name: String::from("Sona")
-    };
+//     impl Elvish for Elf {
+
+//     }
+
+//     impl Elvish for HalfElf {
+
+//     }
+
+//     impl Elvish for 
+
+//     let turkmen_dwarf = Dwarf{
+//         name: String::from("JennetDwarf"),
+//     };
+
+//     let turkmen_halforc = HalfOrc{
+//         name: String::from("SoltanHalfOrc")
+//     };
+
+//      let turkmen_elf = HalfOrc{
+//         name: String::from("ArslanElf")
+//     };
+
+//      let turkmen = HalfOrc{
+//         name: String::from("Sona")
+//     };
 
     
 
-    pub trait Constitution{
-        fn constitution_bonus(&self) -> u8{
-            0
-        }
-    }
+//     pub trait Constitution{
+//         fn constitution_bonus(&self) -> u8{
+//             0
+//         }
+//     }
 
-    impl Constitution for Dwarf {
-        fn constitution_bonus(&self) -> u8 {
-            2
-        }
-    }
+//     impl Constitution for Dwarf {
+//         fn constitution_bonus(&self) -> u8 {
+//             2
+//         }
+//     }
 
-     impl Constitution for HalfOrc {
-        fn constitution_bonus(&self) -> u8 {
-            1
-        }
-    }
+//      impl Constitution for HalfOrc {
+//         fn constitution_bonus(&self) -> u8 {
+//             1
+//         }
+//     }
 
    
-    turkmen.constitution_bonus();
-    turkmen_elf.constitution_bonus();
-    turkmen_halforc.constitution_bonus(); //returns 1
-    turkmen_dwarf.constitution_bonus(); // returns 2
+//     turkmen.constitution_bonus();
+//     turkmen_elf.constitution_bonus();
+//     turkmen_halforc.constitution_bonus(); //returns 1
+//     turkmen_dwarf.constitution_bonus(); // returns 2
+// }
+
+// Next: Final task for exercise 2
+
+fn main() {
+
+    let mut array = [1, 2, 3, 4,];
+    
+    // let array_reversed = array.reverse();
+    array.reverse();
+
+    println!("{:?}", array);
+    
 }
