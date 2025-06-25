@@ -391,13 +391,35 @@
 
 // Next: Final task for exercise 2
 
+
+// version 1
+
+// fn main() {
+
+//     let mut array = [1, 2, 3, 4,];
+    
+//     // let array_reversed = array.reverse();
+//     array.reverse();
+
+//     println!("{:?}", array);
+    
+// }
+
+
+// version 2:
+
 fn main() {
 
     let mut array = [1, 2, 3, 4,];
-    
-    // let array_reversed = array.reverse();
-    array.reverse();
 
+    for i in 0..array.len(){
+        let temp = array[i];
+        array[i] = array[array.len() - i - 1];
+        array[array.len() - i - 1] = temp;
+
+    }
+    
+    // add your code here 
     println!("{:?}", array);
     
 }
