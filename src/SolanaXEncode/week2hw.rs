@@ -116,34 +116,85 @@
 
 // I AM NOT DONE
 
-fn main() {}
+// fn main() {}
 
-pub fn fizz_if_foo(fizzish: &str) -> &str {
-    if fizzish == "fizz" {
-        "foo"
-    } 
-    else {
-        "1"
+// pub fn fizz_if_foo(fizzish: &str) -> &str {
+//     if fizzish == "fizz" {
+//         "foo"
+//     } 
+//     else {
+//         "1"
+//     }
+// }
+
+// // No test changes needed!
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+
+//     #[test]
+//     fn foo_for_fizz() {
+//         assert_eq!(fizz_if_foo("fizz"), "foo")
+//     }
+
+//     #[test]
+//     fn bar_for_fuzz() {
+//         assert_eq!(fizz_if_foo("fuzz"), "bar")
+//     }
+
+//     #[test]
+//     fn default_to_baz() {
+//         assert_eq!(fizz_if_foo("literally anything"), "baz")
+//     }
+// }
+
+// primitive_types1.rs
+// Fill in the rest of the line that has code missing!
+// No hints, there's no tricks, just get used to typing these :)
+
+// I AM NOT DONE
+
+// fn main() {
+//     // Booleans (`bool`)
+
+//     let is_morning = true;
+//     if is_morning {
+//         println!("Good morning!");
+//     }
+
+//     let is_evening = false;// Finish the rest of this line like the example! Or make it be false!
+//     if is_evening {
+//         println!("Good evening!");
+//     }
+// }
+
+
+// primitive_types2.rs
+// Fill in the rest of the line that has code missing!
+// No hints, there's no tricks, just get used to typing these :)
+
+// I AM NOT DONE
+
+fn main() {
+    // Characters (`char`)
+
+    // Note the _single_ quotes, these are different from the double quotes
+    // you've been seeing around.
+    let my_first_initial = 'C';
+    if my_first_initial.is_alphabetic() {
+        println!("Alphabetical!");
+    } else if my_first_initial.is_numeric() {
+        println!("Numerical!");
+    } else {
+        println!("Neither alphabetic nor numeric!");
     }
-}
 
-// No test changes needed!
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn foo_for_fizz() {
-        assert_eq!(fizz_if_foo("fizz"), "foo")
-    }
-
-    #[test]
-    fn bar_for_fuzz() {
-        assert_eq!(fizz_if_foo("fuzz"), "bar")
-    }
-
-    #[test]
-    fn default_to_baz() {
-        assert_eq!(fizz_if_foo("literally anything"), "baz")
+    let your_character = '7'; 
+   if your_character.is_alphabetic() {
+        println!("Alphabetical!");
+    } else if your_character.is_numeric() {
+        println!("Numerical!");
+    } else {
+        println!("Neither alphabetic nor numeric!");
     }
 }
