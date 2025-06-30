@@ -314,15 +314,76 @@
 
 // I AM NOT DONE
 
-fn main() {
-    let word = String::from("green"); // Try not changing this line :)
-    if is_a_color_word(&word) {
-        println!("That is a color word I know!");
-    } else {
-        println!("That is not a color word I know.");
-    }
-}
+// fn main() {
+//     let word = String::from("green"); // Try not changing this line :)
+//     if is_a_color_word(&word) {
+//         println!("That is a color word I know!");
+//     } else {
+//         println!("That is not a color word I know.");
+//     }
+// }
 
-fn is_a_color_word(attempt: &str) -> bool {
-    attempt == "green" || attempt == "blue" || attempt == "red"
+// fn is_a_color_word(attempt: &str) -> bool {
+//     attempt == "green" || attempt == "blue" || attempt == "red"
+// }
+
+// variables1.rs
+// Make me compile!
+// Execute the command `rustlings hint variables1` if you want a hint :)
+
+// I AM NOT DONE
+
+// fn main() {
+//     let y = 5;
+//     println!("y has the value {}", y);
+// }
+
+
+// variables2.rs
+// Make me compile! Execute the command `rustlings hint variables2` if you want a hint :)
+
+// I AM NOT DONE
+
+// fn main() {
+//     let x = 5;
+//     if x == 10 {
+//         println!("x is ten!");
+//     } else {
+//         println!("x is not ten!");
+//     }
+// }
+
+// variables3.rs
+// Make me compile! Execute the command `rustlings hint variables3` if you want a hint :)
+
+// I AM NOT DONE
+
+// fn main() {
+//     let x: i32 = 5;
+//     println!("Number {}", x);
+// }
+
+// variables4.rs
+// Make me compile! Execute the command `rustlings hint variables4` if you want a hint :)
+
+// I AM NOT DONE
+
+// fn main() {
+//     let mut x = 3;
+//     println!("Number {}", x);
+//     x = 5; // don't change this line
+//     println!("Number {}", x);
+// }
+
+
+// variables5.rs
+// Make me compile! Execute the command `rustlings hint variables5` if you want a hint :)
+
+// I AM NOT DONE
+
+fn main() {
+    let number = "T-H-R-E-E"; // don't change this line
+    println!("Spell a Number : {}", number);
+    let number = 3; // don't rename this variable
+    println!("Number plus two is : {}", number + 2);
 }
