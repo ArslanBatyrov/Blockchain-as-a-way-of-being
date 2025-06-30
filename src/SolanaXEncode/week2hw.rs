@@ -56,19 +56,53 @@
 
 // I AM NOT DONE
 
-fn main() {
-    let original_price = 51;
-    println!("Your sale price is {}", sale_price(original_price));
-}
+// fn main() {
+//     let original_price = 51;
+//     println!("Your sale price is {}", sale_price(original_price));
+// }
 
-fn sale_price(price: i32) -> i32 {
-    if is_even(price) {
-        price - 10
+// fn sale_price(price: i32) -> i32 {
+//     if is_even(price) {
+//         price - 10
+//     } else {
+//         price - 3
+//     }
+// }
+
+// fn is_even(num: i32) -> bool {
+//     num % 2 == 0
+// }  //after the arrow -> you must specify the type you want to return
+
+//NEXT:  functions5.rs
+// Make me compile! Execute `rustlings hint functions5` for hints :)
+
+// I AM NOT DONE
+
+// fn main() {
+//     let answer = square(3);
+//     println!("The answer is {}", answer);
+// }
+
+// fn square(num: i32) -> i32 {
+//     num * num  // we must remove a semicolon to turn the num num inot an expression
+// }
+
+
+//Next: Ifs.
+
+// this one is the exercise If1.rs
+
+// if1.rs
+
+// I AM NOT DONE
+
+pub fn bigger(a: i32, b: i32) -> i32 {
+
+    if a > b {
+        a
     } else {
-        price - 3
-    }
+            b
+        }
 }
-
-fn is_even(num: i32) -> bool {
-    num % 2 == 0
-}  //after the arrow -> you must specify the type you want to return
+  
+fn main() {}
