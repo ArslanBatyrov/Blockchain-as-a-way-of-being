@@ -279,15 +279,50 @@
 
 // I AM NOT DONE
 
-fn main () {
-    let my_fav_fruits = vec!["banana", "custard apple", "avocado", "peach", "raspberry"];
+// fn main () {
+//     let my_fav_fruits = vec!["banana", "custard apple", "avocado", "peach", "raspberry"];
 
-    let mut my_iterable_fav_fruits = my_fav_fruits.iter();   // TODO: Step 1
+//     let mut my_iterable_fav_fruits = my_fav_fruits.iter();   // TODO: Step 1
 
-    assert_eq!(my_iterable_fav_fruits.next(), Some(&"banana"));
-    assert_eq!(my_iterable_fav_fruits.next(), Some(&"custard apple"));     // TODO: Step 2
-    assert_eq!(my_iterable_fav_fruits.next(), Some(&"avocado"));
-    assert_eq!(my_iterable_fav_fruits.next(), Some(&"peach"));     // TODO: Step 3
-    assert_eq!(my_iterable_fav_fruits.next(), Some(&"raspberry"));
-    assert_eq!(my_iterable_fav_fruits.next(), Some(&"raspberry"));     // TODO: Step 4
+//     assert_eq!(my_iterable_fav_fruits.next(), Some(&"banana"));
+//     assert_eq!(my_iterable_fav_fruits.next(), Some(&"custard apple"));     // TODO: Step 2
+//     assert_eq!(my_iterable_fav_fruits.next(), Some(&"avocado"));
+//     assert_eq!(my_iterable_fav_fruits.next(), Some(&"peach"));     // TODO: Step 3
+//     assert_eq!(my_iterable_fav_fruits.next(), Some(&"raspberry"));
+//     assert_eq!(my_iterable_fav_fruits.next(), Some(&"raspberry"));     // TODO: Step 4
+// }
+
+// strings1.rs
+// Make me compile without changing the function signature!
+// Execute `rustlings hint strings1` for hints ;)
+
+// I AM NOT DONE
+
+// fn main() {
+//     let answer = current_favorite_course();
+//     println!("My course is {}", answer);
+// }
+
+// fn current_favorite_course() -> String {
+//      String::from("Solana")
+// }
+
+
+// strings2.rs
+// Make me compile without changing the function signature!
+// Execute `rustlings hint strings2` for hints :)
+
+// I AM NOT DONE
+
+fn main() {
+    let word = String::from("green"); // Try not changing this line :)
+    if is_a_color_word(&word) {
+        println!("That is a color word I know!");
+    } else {
+        println!("That is not a color word I know.");
+    }
+}
+
+fn is_a_color_word(attempt: &str) -> bool {
+    attempt == "green" || attempt == "blue" || attempt == "red"
 }
