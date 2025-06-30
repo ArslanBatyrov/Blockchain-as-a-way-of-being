@@ -175,26 +175,93 @@
 
 // I AM NOT DONE
 
-fn main() {
-    // Characters (`char`)
+// fn main() {
+//     // Characters (`char`)
 
-    // Note the _single_ quotes, these are different from the double quotes
-    // you've been seeing around.
-    let my_first_initial = 'C';
-    if my_first_initial.is_alphabetic() {
-        println!("Alphabetical!");
-    } else if my_first_initial.is_numeric() {
-        println!("Numerical!");
-    } else {
-        println!("Neither alphabetic nor numeric!");
-    }
+//     // Note the _single_ quotes, these are different from the double quotes
+//     // you've been seeing around.
+//     let my_first_initial = 'C';
+//     if my_first_initial.is_alphabetic() {
+//         println!("Alphabetical!");
+//     } else if my_first_initial.is_numeric() {
+//         println!("Numerical!");
+//     } else {
+//         println!("Neither alphabetic nor numeric!");
+//     }
 
-    let your_character = '7'; 
-   if your_character.is_alphabetic() {
-        println!("Alphabetical!");
-    } else if your_character.is_numeric() {
-        println!("Numerical!");
-    } else {
-        println!("Neither alphabetic nor numeric!");
-    }
+//     let your_character = '7'; 
+//    if your_character.is_alphabetic() {
+//         println!("Alphabetical!");
+//     } else if your_character.is_numeric() {
+//         println!("Numerical!");
+//     } else {
+//         println!("Neither alphabetic nor numeric!");
+//     }
+// }
+
+
+// primitive_types3.rs
+// Create an array with at least 100 elements in it where the ??? is.
+// Execute `rustlings hint primitive_types3` for hints!
+
+// I AM NOT DONE
+
+// fn main() {
+//     let a = [1,2,3,4,5,6,7,8,9,10,11100];
+
+//     if a.len() >= 100 {
+//         println!("Wow, that's a big array!");
+//     } else {
+//         println!("Meh, I eat arrays like that for breakfast.");
+//     }
+// }
+
+// primitive_types4.rs
+// Get a slice out of Array a where the ??? is so that the test passes.
+// Execute `rustlings hint primitive_types4` for hints!!
+
+// I AM NOT DONE
+
+// #[test]
+// fn slice_out_of_array() {
+//     let a = [1, 2, 3, 4, 5];
+
+//     let nice_slice = &a[1..4];
+
+//     assert_eq!([2, 3, 4], nice_slice)
+// }
+
+// fn main(){}
+
+
+// primitive_types5.rs
+// Destructure the `cat` tuple so that the println will work.
+// Execute `rustlings hint primitive_types5` for hints!
+
+// I AM NOT DONE
+
+// fn main() {
+//     let cat = ("Furry McFurson", 3.5);
+//     let (name,age) = cat;
+
+//     println!("{} is {} years old.", name, age);
+// }
+
+// primitive_types6.rs
+// Use a tuple index to access the second element of `numbers`.
+// You can put the expression for the second element where ??? is so that the test passes.
+// Execute `rustlings hint primitive_types6` for hints!
+
+// I AM NOT DONE
+
+#[test]
+fn indexing_tuple() {
+    let numbers = (1, 2, 3);
+    // Replace below ??? with the tuple indexing syntax.
+    let second = numbers.1;
+
+    assert_eq!(2, second,
+        "This is not the 2nd number in the tuple!")
 }
+
+fn main(){}
