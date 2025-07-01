@@ -583,29 +583,85 @@
 
 // I AM NOT DONE
 
-fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
-    for i in v.iter_mut() {
-        *i = *i * 2; 
-    }
+// fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
+//     for i in v.iter_mut() {
+//         *i = *i * 2; 
+//     }
 
     
-    println!("{:?}", v);
+//     println!("{:?}", v);
 
-    v  
+//     v  
+// }
+
+
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+
+//     #[test]
+//     fn test_vec_loop() {
+//         let v: Vec<i32> = (1..).filter(|x| x % 2 == 0).take(5).collect();
+//         let ans = vec_loop(v.clone());
+
+//         assert_eq!(ans, v.iter().map(|x| x * 2).collect::<Vec<i32>>());
+//     }
+// }
+
+// fn main(){}
+
+// Next: enums.1
+
+// enums1.rs
+// Make me compile! Execute `rustlings hint enums1` for hints!
+
+// I AM NOT DONE
+
+// #[derive(Debug)]
+
+// enum Message {
+//     Quit,
+//     Echo,
+//     Move,
+//     ChangeColor,
+// }
+
+// fn main() {
+//     println!("{:?}", Message::Quit);
+//     println!("{:?}", Message::Echo);
+//     println!("{:?}", Message::Move);
+//     println!("{:?}", Message::ChangeColor);
+// }
+
+// enums2.rs
+// Make me compile! Execute `rustlings hint enums2` for hints!
+
+// I AM NOT DONE
+
+#[derive(Debug)]
+enum Message {
+    // TODO: define the different variants used below
+    Move{x: i32, y: i32},
+    Echo(String),
+    ChangeColor(i32, i32, i32),
+    Quit,
 }
 
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_vec_loop() {
-        let v: Vec<i32> = (1..).filter(|x| x % 2 == 0).take(5).collect();
-        let ans = vec_loop(v.clone());
-
-        assert_eq!(ans, v.iter().map(|x| x * 2).collect::<Vec<i32>>());
+impl Message {
+    fn call(&self) {
+        println!("{:?}", &self);
     }
 }
 
-fn main(){}
+fn main() {
+    let messages = [
+        Message::Move { x: 10, y: 30 },
+        Message::Echo(String::from("hello world")),
+        Message::ChangeColor(200, 255, 255),
+        Message::Quit,
+    ];
+
+    for message in &messages {
+        message.call();
+    }
+}
