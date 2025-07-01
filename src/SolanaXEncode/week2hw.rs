@@ -671,78 +671,158 @@
 
 // I AM NOT DONE
 
-use std::fmt::DebugStruct;
+// use std::fmt::DebugStruct;
 
-enum Message {
-    // TODO: implement the message variant types based on their usage below
-    ChangeColor((u8, u8, u8)),
-    Echo(String),
-    Move(Point),
-    Quit,
-}
+// enum Message {
+//     // TODO: implement the message variant types based on their usage below
+//     ChangeColor((u8, u8, u8)),
+//     Echo(String),
+//     Move(Point),
+//     Quit,
+// }
 
-struct Point {
-    x: u8,
-    y: u8,
-}
+// struct Point {
+//     x: u8,
+//     y: u8,
+// }
 
-struct State {
-    color: (u8, u8, u8),
-    position: Point,
-    quit: bool,
-}
+// struct State {
+//     color: (u8, u8, u8),
+//     position: Point,
+//     quit: bool,
+// }
 
-impl State {
-    fn change_color(&mut self, color: (u8, u8, u8)) {
-        self.color = color;
-    }
+// impl State {
+//     fn change_color(&mut self, color: (u8, u8, u8)) {
+//         self.color = color;
+//     }
 
-    fn quit(&mut self) {
-        self.quit = true;
-    }
+//     fn quit(&mut self) {
+//         self.quit = true;
+//     }
 
-    fn echo(&self, s: String) {
-        println!("{}", s);
-    }
+//     fn echo(&self, s: String) {
+//         println!("{}", s);
+//     }
 
-    fn move_position(&mut self, p: Point) {
-        self.position = p;
-    }
+//     fn move_position(&mut self, p: Point) {
+//         self.position = p;
+//     }
 
-    fn process(&mut self, message: Message) {
-        match message {
-            Message::ChangeColor(color) => self.change_color(color),
-            Message::Echo(text) => self.echo(text),
-            Message::Move(point) => self.move_position(point),
-            Message::Quit => self.quit(),
+//     fn process(&mut self, message: Message) {
+//         match message {
+//             Message::ChangeColor(color) => self.change_color(color),
+//             Message::Echo(text) => self.echo(text),
+//             Message::Move(point) => self.move_position(point),
+//             Message::Quit => self.quit(),
 
-        }
-    }
-}
+//         }
+//     }
+// }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
 
-    #[test]
-    fn test_match_message_call() {
-        let mut state = State {
-            quit: false,
-            position: Point { x: 0, y: 0 },
-            color: (0, 0, 0),
-        };
-        state.process(Message::ChangeColor((255, 0, 255)));
-        state.process(Message::Echo(String::from("hello world")));
-        state.process(Message::Move(Point { x: 10, y: 15 }));
-        state.process(Message::Quit);
+//     #[test]
+//     fn test_match_message_call() {
+//         let mut state = State {
+//             quit: false,
+//             position: Point { x: 0, y: 0 },
+//             color: (0, 0, 0),
+//         };
+//         state.process(Message::ChangeColor((255, 0, 255)));
+//         state.process(Message::Echo(String::from("hello world")));
+//         state.process(Message::Move(Point { x: 10, y: 15 }));
+//         state.process(Message::Quit);
 
-        assert_eq!(state.color, (255, 0, 255));
-        assert_eq!(state.position.x, 10);
-        assert_eq!(state.position.y, 15);
-        assert_eq!(state.quit, true);
-    }
-}
+//         assert_eq!(state.color, (255, 0, 255));
+//         assert_eq!(state.position.x, 10);
+//         assert_eq!(state.position.y, 15);
+//         assert_eq!(state.quit, true);
+//     }
+// }
 
-fn main() {
-    
-}
+// fn main() {
+
+// }
+
+// This shopping list program isn't compiling!
+// Use your knowledge of generics to fix it.
+
+// Execute `rustlings hint generics1` for hints!
+
+// I AM NOT DONE
+
+// fn main() {
+//     let mut shopping_list: Vec<&str> = Vec::new();
+//     shopping_list.push("milk");
+// }
+
+// This powerful wrapper provides the ability to store a positive integer value.
+// Rewrite it using generics so that it supports wrapping ANY type.
+
+// Execute `rustlings hint generics2` for hints!
+
+// I AM NOT DONE
+
+
+// struct Wrapper {
+//     value: u32,
+// }
+
+// impl Wrapper {
+//     pub fn new(value: u32) -> Self {
+//         Wrapper { value }
+//     }
+// }
+
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+
+//     #[test]
+//     fn store_u32_in_wrapper() {
+//         assert_eq!(Wrapper::new(42).value, 42);
+//     }
+
+//     #[test]
+//     fn store_str_in_wrapper() {
+//         assert_eq!(Wrapper::new("Foo").value, "Foo");
+//     }
+// }
+
+// extra revision of generics is required for me to solve the above exercise
+// Next will be the revision to the solve the above exercise.
+
+
+// Here I remove the duplication issues using a function
+// fn main(){
+//     let number_list =  vec![34, 50, 25, 100, 65];
+//     largest(&number_list);
+    // let mut largest = number_list[0];
+
+    // for number in &number_list {
+    //     if *number > largest {
+    //         largest = *number;
+    //     } 
+    // }
+    //
+    // println!("The largest number is {}", largest);
+//}
+
+// fn largest(list: &[i32])-> &i32{
+//     let mut largest = &list[0];
+
+//     for item in list {
+//         if item > largest{
+//             largest = item;
+//         }
+        
+//     }
+//     println!("{}",largest);
+//     largest
+// }
+
+
+// removing a duplication issue using generic data types.
