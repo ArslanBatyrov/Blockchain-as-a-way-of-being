@@ -826,3 +826,60 @@
 
 
 // removing a duplication issue using generic data types.
+
+// Using generics with Functions:
+
+// fn largest<T>(list: &[T]) -> &T {
+
+// }
+
+// Using generics in Structs
+
+// struct Point<T>{
+//     x: T,
+//     y: T,
+// }
+
+// struct Point<T, K>{
+//     x: T,
+//     y: K,
+// }
+
+// fn main(){
+//     let integer = Point {x: 5, y: 'o'};
+//     let float = Point{x: 5.0, y:10.0};
+// }
+
+// Next: Using generics in Enums
+
+// enum Result<T, E> {
+//     Ok(T),
+//     Err(E),
+// }
+
+// Next: Definitions of generic in Methods
+
+// Point<T> struct with method
+
+struct Point<T>{
+    x: T,
+    y: T,
+}
+
+impl<T> Point<T> {
+    
+    fn x(&self) -> &T{
+        &self.x
+    }
+
+    fn y(&self) -> &T {
+        &self.y
+    }
+}
+
+fn main(){
+    let p = Point {x:5, y:10};
+
+    println!("p.y = {}", p.y());
+    println!("p.x = {}", p.x());
+}
