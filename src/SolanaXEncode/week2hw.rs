@@ -1111,22 +1111,78 @@
 
 // I AM NOT DONE
 
+// fn main() {
+//     let data = "Rust is great!".to_string();
+
+//     get_char(&data);
+
+//     string_uppercase(data);
+// }
+
+// // Should not take ownership
+// fn get_char(data: &String) -> char {
+//     data.chars().last().unwrap()
+// }
+
+// // Should take ownership
+// fn string_uppercase(mut data: String) {
+//     data = data.to_uppercase();
+
+//     println!("{}", data);
+// }
+
+
+//---------------------------------------
+
+//Next: Options 
+
+// option1.rs
+// Make me compile! Execute `rustlings hint option1` for hints
+
+// I AM NOT DONE
+
+// you can modify anything EXCEPT for this function's signature
+// fn print_number(maybe_number: Option<u16>) {
+//     println!("printing: {}", maybe_number.unwrap());
+// }
+
+// fn main() {
+//     print_number(Some(13));
+//     print_number(Some(99));
+
+//     let mut numbers: [Option<u16>; 5] = [None; 5];
+//     for iter in 0..5 {
+//         let number_to_add: u16 = {
+//             ((iter * 1235) + 2) / (4 * 16)
+//         };
+
+//         numbers[iter as usize] = Some(number_to_add);
+//     }
+// }
+
+
+// option2.rs
+// Make me compile! Execute `rustlings hint option2` for hints
+
+// I AM NOT DONE
+
 fn main() {
-    let data = "Rust is great!".to_string();
+    let optional_word = Some(String::from("rustlings"));
+    // TODO: Make this an if let statement whose value is "Some" type
+    if let Some(word) = optional_word {
+        println!("The word is: {}", word);
+    } else {
+        println!("The optional word doesn't contain anything");
+    }
 
-    get_char(&data);
+    let mut optional_integers_vec: Vec<Option<i8>> = Vec::new();
+    for x in 1..10 {
+        optional_integers_vec.push(Some(x));
+    }
 
-    string_uppercase(data);
-}
-
-// Should not take ownership
-fn get_char(data: &String) -> char {
-    data.chars().last().unwrap()
-}
-
-// Should take ownership
-fn string_uppercase(mut data: String) {
-    data = data.to_uppercase();
-
-    println!("{}", data);
+    // TODO: make this a while let statement - remember that vector.pop also adds another layer of Option<T>
+    // You can stack `Option<T>`'s into while let and if let
+    while let Some(Some(integer)) = optional_integers_vec.pop() {
+        println!("current value: {}", integer);
+    }
 }
