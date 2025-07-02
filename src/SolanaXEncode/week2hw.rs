@@ -1194,17 +1194,38 @@
 
 // I AM NOT DONE
 
-struct Point {
-    x: i32,
-    y: i32,
-}
+// struct Point {
+//     x: i32,
+//     y: i32,
+// }
 
-fn main() {
-    let y: Option<Point> = Some(Point { x: 100, y: 200 });
+// fn main() {
+//     let y: Option<Point> = Some(Point { x: 100, y: 200 });
 
-    match &y {
-        Some(p) => println!("Co-ordinates are {},{} ", p.x, p.y),
-        _ => println!("no match"),
+//     match &y {
+//         Some(p) => println!("Co-ordinates are {},{} ", p.x, p.y),
+//         _ => println!("no match"),
+//     }
+//     y; // Fix without deleting this line.
+// }
+
+
+// Next: Coding Challenge
+
+//Given a vector nums, create a new vector called runningSum where each element at index i is the sum of all elements from the beginning of the vector up to index i.
+//Return the running sum of nums.
+
+fn running_sum(nums: Vec<i32>) -> Vec<i32> { 
+    let mut new_vector:Vec<i32> = Vec::with_capacity(nums.len()); 
+    let mut sum = 0;
+
+    for i in nums{
+        sum += i;
+        new_vector.push(sum);
     }
-    y; // Fix without deleting this line.
+    new_vector
+}  
+  
+fn main() {  
+    println!("{:?}", running_sum(vec![1, 1, 1, 1, 1]));
 }
