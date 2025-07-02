@@ -861,25 +861,54 @@
 
 // Point<T> struct with method
 
-struct Point<T>{
-    x: T,
-    y: T,
-}
+// struct Point<T>{
+//     x: T,
+//     y: T,
+// }
 
-impl<T> Point<T> {
+// impl<T> Point<T> {
     
-    fn x(&self) -> &T{
-        &self.x
-    }
+//     fn x(&self) -> &T{
+//         &self.x
+//     }
 
-    fn y(&self) -> &T {
-        &self.y
+//     fn y(&self) -> &T {
+//         &self.y
+//     }
+// }
+
+// fn main(){
+//     let p = Point {x:5, y:10};
+
+//     println!("p.y = {}", p.y());
+//     println!("p.x = {}", p.x());
+// }
+
+
+pub struct NewsArticle{
+    pub name: String,
+    pub headline: String,
+    pub author: String,
+}
+
+pub trait Summary {
+    fn summarize(&self) -> String;
+}
+
+impl Summary for NewsArticle{
+    fn summarize(&self) -> String {
+        println!("name: {} , headline: {} , author: {}", self.name, self.headline, self.author);
+        format!("{}, by {} ({})", self.headline, self.author, self.author)
     }
 }
+
 
 fn main(){
-    let p = Point {x:5, y:10};
+    let article = NewsArticle{
+        name: String::from("Jennet News"),
+        headline: String::from("Soltan is playing cards again..."),
+        author: String::from("Arslan")
+    };
 
-    println!("p.y = {}", p.y());
-    println!("p.x = {}", p.x());
+    article.summarize();
 }
