@@ -885,30 +885,68 @@
 // }
 
 
-pub struct NewsArticle{
-    pub name: String,
-    pub headline: String,
-    pub author: String,
+// pub struct NewsArticle{
+//     pub name: String,
+//     pub headline: String,
+//     pub author: String,
+// }
+
+// pub trait Summary {
+//     fn summarize(&self) -> String;
+// }
+
+// impl Summary for NewsArticle{
+//     fn summarize(&self) -> String {
+//         println!("name: {} , headline: {} , author: {}", self.name, self.headline, self.author);
+//         format!("{}, by {} ({})", self.headline, self.author, self.author)
+//     }
+// }
+
+
+// fn main(){
+//     let article = NewsArticle{
+//         name: String::from("Jennet News"),
+//         headline: String::from("Soltan is playing cards again..."),
+//         author: String::from("Arslan")
+//     };
+
+//     article.summarize();
+// }
+
+
+
+// Next: Attempt to solve the things I was not able to
+
+// This powerful wrapper provides the ability to store a positive integer value.
+// Rewrite it using generics so that it supports wrapping ANY type.
+
+// Execute `rustlings hint generics2` for hints!
+
+// I AM NOT DONE
+
+struct Wrapper<T> {
+    value: T,
 }
 
-pub trait Summary {
-    fn summarize(&self) -> String;
-}
-
-impl Summary for NewsArticle{
-    fn summarize(&self) -> String {
-        println!("name: {} , headline: {} , author: {}", self.name, self.headline, self.author);
-        format!("{}, by {} ({})", self.headline, self.author, self.author)
+impl<T> Wrapper<T> {
+    pub fn new(value: T) -> Self {
+        Wrapper { value }
     }
 }
 
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-fn main(){
-    let article = NewsArticle{
-        name: String::from("Jennet News"),
-        headline: String::from("Soltan is playing cards again..."),
-        author: String::from("Arslan")
-    };
+    #[test]
+    fn store_u32_in_wrapper() {
+        assert_eq!(Wrapper::new(42).value, 42);
+    }
 
-    article.summarize();
+    #[test]
+    fn store_str_in_wrapper() {
+        assert_eq!(Wrapper::new("Foo").value, "Foo");
+    }
 }
+
+fn main(){}
