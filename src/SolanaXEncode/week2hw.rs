@@ -1006,25 +1006,100 @@
 
 // I AM NOT DONE
 
+// fn main() {
+//     let vec0 = Vec::new();
+
+//     let mut vec1 = fill_vec(&vec0);
+
+//     // Do not change the following line!
+//     println!("{} has length {} content `{:?}`", "vec0", vec0.len(), vec0);
+
+//     vec1.push(88);
+
+//     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
+// }
+
+// fn fill_vec(vec: &Vec<i32>) -> Vec<i32> {
+//     let mut vec = vec.clone();
+
+//     vec.push(22);
+//     vec.push(44);
+//     vec.push(66);
+
+//     vec
+// }
+
+// move_semantics3.rs
+// Make me compile without adding new lines-- just changing existing lines!
+// (no lines with multiple semicolons necessary!)
+// Execute `rustlings hint move_semantics3` for hints :)
+
+// I AM NOT DONE
+
+// fn main() {
+//     let vec0 = Vec::new();
+
+//     let mut vec1 = fill_vec(vec0);
+
+//     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
+
+//     vec1.push(88);
+
+//     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
+// }
+
+// fn fill_vec(mut vec: Vec<i32>) -> Vec<i32> {
+//     vec.push(22);
+//     vec.push(44);
+//     vec.push(66);
+
+//     vec
+// }
+
+// move_semantics4.rs
+// Refactor this code so that instead of having `vec0` and creating the vector
+// in `fn main`, we create it within `fn fill_vec` and transfer the
+// freshly created vector from fill_vec to its caller.
+// Execute `rustlings hint move_semantics4` for hints!
+
+// I AM NOT DONE
+
+// fn main() {
+//     //let vec0 = Vec::new();
+
+//     let mut vec1 = fill_vec();
+
+//     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
+
+//     vec1.push(88);
+
+//     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
+// }
+
+// // `fill_vec()` no longer takes `vec: Vec<i32>` as argument
+// fn fill_vec() -> Vec<i32> {
+//     let mut vec = Vec::new();
+//     // let mut vec = vec;
+
+//     vec.push(22);
+//     vec.push(44);
+//     vec.push(66);
+
+//     vec
+// }
+
+// move_semantics5.rs
+// Make me compile only by reordering the lines in `main()`, but without
+// adding, changing or removing any of them.
+// Execute `rustlings hint move_semantics5` for hints :)
+
+// I AM NOT DONE
+
 fn main() {
-    let vec0 = Vec::new();
-
-    let mut vec1 = fill_vec(&vec0);
-
-    // Do not change the following line!
-    println!("{} has length {} content `{:?}`", "vec0", vec0.len(), vec0);
-
-    vec1.push(88);
-
-    println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
-}
-
-fn fill_vec(vec: &Vec<i32>) -> Vec<i32> {
-    let mut vec = vec.clone();
-
-    vec.push(22);
-    vec.push(44);
-    vec.push(66);
-
-    vec
+    let mut x = 100;
+    let y = &mut x;
+    *y += 100;
+    let z = &mut x;
+    *z += 1000;
+    assert_eq!(x, 1200);
 }
