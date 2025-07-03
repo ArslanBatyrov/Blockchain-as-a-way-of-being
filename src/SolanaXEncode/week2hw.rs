@@ -1244,35 +1244,49 @@
 
 // I AM NOT DONE
 
-pub fn generate_nametag_text(name: String) -> Option<String> {
-    if name.len() > 0 {
-        Some(format!("Hi! My name is {}", name))
-    } else {
-        // Empty names aren't allowed.
-        None
-    }
-}
+// pub fn generate_nametag_text(name: String) -> Option<String> {
+//     if name.len() > 0 {
+//         Some(format!("Hi! My name is {}", name))
+//     } else {
+//         // Empty names aren't allowed.
+//         None
+//     }
+// }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
 
-    #[test]
-    fn generates_nametag_text_for_a_nonempty_name() {
-        assert_eq!(
-            generate_nametag_text("Beyoncé".into()),
-            Ok("Hi! My name is Beyoncé".into())
-        );
-    }
+//     #[test]
+//     fn generates_nametag_text_for_a_nonempty_name() {
+//         assert_eq!(
+//             generate_nametag_text("Beyoncé".into()),
+//             Ok("Hi! My name is Beyoncé".into())
+//         );
+//     }
 
-    #[test]
-    fn explains_why_generating_nametag_text_fails() {
-        assert_eq!(
-            generate_nametag_text("".into()),
-            // Don't change this line
-            Err("`name` was empty; it must be nonempty.".into())
-        );
-    }
-}
+//     #[test]
+//     fn explains_why_generating_nametag_text_fails() {
+//         assert_eq!(
+//             generate_nametag_text("".into()),
+//             // Don't change this line
+//             Err("`name` was empty; it must be nonempty.".into())
+//         );
+//     }
+// }
 
 // I can't solve this because I do not understand error handling at all. Will go thorugh rust book now
+
+// There are 2 types of errors: recoverable and unrecoverable
+// For recoverable we have Reult<T, E> while for unrecoverbale rust has a panic! MAcro
+// Unrecoverable error is usually indicates some bug i the code
+// panic macro automatically clear the stack, it is quite a bit ow work
+// If you do want it not to clear a stack you can use panic = "abort", so taht it shuts down
+//Without clearing a stack
+
+// Next: Recoverable errors and how to work with them using Result
+
+enum Result<T,E>{
+    Ok(T),
+    Err(E),
+}
