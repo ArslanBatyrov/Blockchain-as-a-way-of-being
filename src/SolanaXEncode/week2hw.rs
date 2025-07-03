@@ -1472,28 +1472,67 @@
 
 // I AM NOT DONE
 
-use std::num::ParseIntError;
+// use std::num::ParseIntError;
 
-fn main() -> Result<(), std::num::ParseIntError> {
-    let mut tokens = 100;
-    let pretend_user_input = "8";
+// fn main() -> Result<(), std::num::ParseIntError> {
+//     let mut tokens = 100;
+//     let pretend_user_input = "8";
 
-    let cost = total_cost(pretend_user_input)?;
+//     let cost = total_cost(pretend_user_input)?;
 
-    if cost > tokens {
-        println!("You can't afford that many!");
-    } else {
-        tokens -= cost;
-        println!("You now have {} tokens.", tokens);
-    }
+//     if cost > tokens {
+//         println!("You can't afford that many!");
+//     } else {
+//         tokens -= cost;
+//         println!("You now have {} tokens.", tokens);
+//     }
 
-     Ok(())
+//      Ok(())
+// }
+
+// pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
+//     let processing_fee = 1;
+//     let cost_per_item = 5;
+//     let qty = item_quantity.parse::<i32>()?;
+
+//     Ok(qty * cost_per_item + processing_fee)
+// }
+
+// errors4.rs
+// Make this test pass! Execute `rustlings hint errors4` for hints :)
+
+// I AM NOT DONE
+
+#[derive(PartialEq, Debug)]
+struct PositiveNonzeroInteger(u64);
+
+#[derive(PartialEq, Debug)]
+enum CreationError {
+    Negative,
+    Zero,
 }
 
-pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
-    let processing_fee = 1;
-    let cost_per_item = 5;
-    let qty = item_quantity.parse::<i32>()?;
+impl PositiveNonzeroInteger {
+    fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
+        match value {
+            v if v < 0 => Err(CreationError::Negative),
+            0 => Err(CreationError::Zero),
+            v => Ok(PositiveNonzeroInteger(v as u64))
+        }
+       // Ok(PositiveNonzeroInteger(value as u64))
+    }
+}
 
-    Ok(qty * cost_per_item + processing_fee)
+#[test]
+fn test_creation() {
+    assert!(PositiveNonzeroInteger::new(10).is_ok());
+    assert_eq!(
+        Err(CreationError::Negative),
+        PositiveNonzeroInteger::new(-10)
+    );
+    assert_eq!(Err(CreationError::Zero), PositiveNonzeroInteger::new(0));
+}
+
+fn main() {
+    
 }
