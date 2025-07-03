@@ -1318,11 +1318,35 @@
 
 // Next: Option Enums. The substitute for null in other languages
 
-fn main(){
+// fn main(){
+
+// }
+// enum Opton<T>{
+//     None,
+//     Some(T),
+// }
+
+// Next: MAtching of enums
+
+use serde::de::value;
+
+fn main (){
+    println!("{}",value_in_cents(Coin::Nickel));
+}
+enum Coin{
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
 
 }
-enum Opton<T>{
-    None,
-    Some(T),
+
+fn value_in_cents(coin: Coin) -> u8 {
+    match coin {
+        Coin::Penny => 1, 
+        Coin:: Nickel => 5,
+        Coin::Dime => 10,
+        Coin::Quarter => 25,
+    }
 }
 
