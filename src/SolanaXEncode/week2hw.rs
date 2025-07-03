@@ -1286,7 +1286,32 @@
 
 // Next: Recoverable errors and how to work with them using Result
 
-enum Result<T,E>{
-    Ok(T),
-    Err(E),
+// enum Result<T,E>{
+//     Ok(T),
+//     Err(E),
+// }
+
+
+//----------- Chapter 6
+
+// Structs give us the way to group related data, while enums give us the way to say that the data is one of the options
+
+// Ip addreess can only be 1 of teh 2, to day that:
+
+#[derive(Debug)]
+enum IpAddrKind {
+    V4(String), //This says that both V4 and V6 will have associated String values
+    V6(String), // More concise that using structs even. Now we said: We have 2 options and each of these options have 1 associated string data
+}
+
+fn main(){
+    let four = IpAddrKind::V4(String::from("Arslan's Data"));
+    let six = IpAddrKind::V6(String::from("jennet's Data"));
+
+
+    fn route_printer(Ip_Kind: IpAddrKind){
+        println!("{:?}", Ip_Kind);
+    } // this function now will take onyl V4 or V6 as its parameter
+
+    route_printer(six);
 }
