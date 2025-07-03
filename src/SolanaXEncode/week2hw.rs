@@ -1328,27 +1328,86 @@
 
 // Next: MAtching of enums
 
-use serde::de::value;
+// use serde::de::value;
 
-fn main (){
-    println!("{}",value_in_cents(Coin::Nickel));
-}
-enum Coin{
-    Penny,
-    Nickel,
-    Dime,
-    Quarter,
+// fn main (){
+//     println!("{}",value_in_cents(Coin::Nickel));
+// }
+// enum Coin{
+//     Penny,
+//     Nickel,
+//     Dime,
+//     Quarter,
 
-}
+// }
 
-fn value_in_cents(coin: Coin) -> u8 {
-    match coin {
-        Coin::Penny => 1, 
-        Coin:: Nickel => 5,
-        Coin::Dime => 10,
-        Coin::Quarter => 25,
-    }
-}
+// fn value_in_cents(coin: Coin) -> u8 {
+//     match coin {
+//         Coin::Penny => 1, 
+//         Coin:: Nickel => 5,
+//         Coin::Dime => 10,
+//         Coin::Quarter => 25,
+//     }
+// }
 
 // One more feature of rust is that arms of the match must be exhaustive, so cover all teh variations of an enums
 
+// ---------- Next: I have finished Ch6, now will go back to Ch9 
+
+// error handling
+
+// use std::fs::File;
+
+// fn main() {
+//     let greeting_file_result = File::open("hello_txt"); //Here error is possible! (return is either a file or Error).
+
+//     let greeting_file = match greeting_file_result{
+//         Ok(file) => file,
+//         Err(error) => panic!("file cannot be opened due to {error:?}, please review the file"),
+//     }; // This error handling
+// }
+
+
+//-------------
+// Covered a good chunk of Error_handling Ch9, now will try to return to rustlings
+
+// errors1.rs
+// This function refuses to generate text to be printed on a nametag if
+// you pass it an empty string. It'd be nicer if it explained what the problem
+// was, instead of just sometimes returning `None`. Thankfully, Rust has a similar
+// construct to `Option` that can be used to express error conditions. Let's use it!
+// Execute `rustlings hint errors1` for hints!
+
+// I AM NOT DONE
+
+pub fn generate_nametag_text(name: String) -> Result<String, String> {
+    if name.len() > 0 {
+        Ok(format!("Hi! My name is {}", name))
+    } else {
+        Err("`name` was empty; it must be nonempty.".into())
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn generates_nametag_text_for_a_nonempty_name() {
+        assert_eq!(
+            generate_nametag_text("Beyoncé".into()),
+            Ok("Hi! My name is Beyoncé".into())
+        );
+    }
+
+    #[test]
+    fn explains_why_generating_nametag_text_fails() {
+        assert_eq!(
+            generate_nametag_text("".into()),
+            // Don't change this line
+            Err("`name` was empty; it must be nonempty.".into())
+        );
+    }
+}
+
+fn main(){}
