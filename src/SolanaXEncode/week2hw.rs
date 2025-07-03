@@ -1350,3 +1350,5 @@ fn value_in_cents(coin: Coin) -> u8 {
     }
 }
 
+// One more feature of rust is that arms of the match must be exhaustive, so cover all teh variations of an enums
+
