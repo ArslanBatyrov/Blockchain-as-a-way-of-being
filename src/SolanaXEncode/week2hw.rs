@@ -1690,20 +1690,157 @@
 
 // Next: Matching on Different errors
 
-use std::fs::File;
-use std::io::ErrorKind;
+// use std::fs::File;
+// use std::io::ErrorKind;
 
-fn main(){
-    let greeting_file_open = File::open("hello.txt");
-    let greeting_file = match greeting_file_open {
-        Ok(file) => file,
-        Err(error) => match error.kind() {
-            ErrorKind::NotFound => match File::create {
-                Ok(fc) => fc,
-                Err(e) => panic!("Problem creating file {e:?}"),
-            },
-            _=>{ panic!("Problem opening the file: {error:?}");
-        }
-        },
-    };
+// fn main(){
+//     let greeting_file_open = File::open("hello.txt");
+//     let greeting_file = match greeting_file_open {
+//         Ok(file) => file,
+//         Err(error) => match error.kind() {
+//             ErrorKind::NotFound => match File::create {
+//                 Ok(fc) => fc,
+//                 Err(e) => panic!("Problem creating file {e:?}"),
+//             },
+//             _=>{ panic!("Problem opening the file: {error:?}");
+//         }
+//         },
+//     };
+// }
+
+// next: Using the Unwrap and Expect:
+
+// use std::fs::File;
+
+// fn main(){
+//     //let greeting_file = File::open("hello.txt").unwrap();
+//     //Expect message has the same function as unwrap but also helps to convey the message
+//     let greeting_file_open = File::open("hello.txt")
+//         .expect("hello.txt should be included in this project"); 
+
+// }
+
+
+// Next: error Propagating.
+
+// use std::fs::File;
+// use std::io::{self, Read};
+
+// fn read_username_from_file() -> Result<String, io::Error> {
+//     let username_file_result = File::open("hello.txt");
+
+//     let mut username_file = match username_file_result {
+//         Ok(file) => file,
+//         Err(e) => return Err(e),
+//     };
+
+//     let mut username = String::new();
+
+//     match username_file.read_to_string(&mut username) {
+//         Ok(_) => Ok(username),
+//         Err(e) => Err(e),
+//     }
+// }
+
+
+// errors6.rs
+
+// Using catch-all error types like `Box<dyn error::Error>` isn't recommended
+// for library code, where callers might want to make decisions based on the
+// error content, instead of printing it out or propagating it further. Here,
+// we define a custom error type to make it possible for callers to decide
+// what to do next when our function returns an error.
+
+// Make these tests pass! Execute `rustlings hint errors6` for hints :)
+
+// I AM NOT DONE
+
+use std::num::ParseIntError;
+
+// This is a custom error type that we will be using in `parse_pos_nonzero()`.
+#[derive(PartialEq, Debug)]
+enum ParsePosNonzeroError {
+    Creation(CreationError),
+    ParseInt(ParseIntError)
 }
+
+impl From<ParseIntError> for ParsePosNonzeroError {
+    fn from(err: ParseIntError) -> Self {
+        ParsePosNonzeroError::ParseInt(err)
+    }
+}
+
+impl From<CreationError> for ParsePosNonzeroError {
+    fn from(err: CreationError) -> Self {
+        ParsePosNonzeroError::Creation(err)
+    }
+}
+
+fn parse_pos_nonzero(s: &str)
+    -> Result<PositiveNonzeroInteger, ParsePosNonzeroError>
+{
+    let x: i64 = s.parse()?;
+    let value = PositiveNonzeroInteger::new(x)?;
+    Ok(value)
+   
+    // PositiveNonzeroInteger::new(x)
+    //     .map_err(ParsePosNonzeroError::from_creation)
+}
+
+// Don't change anything below this line.
+
+#[derive(PartialEq, Debug)]
+struct PositiveNonzeroInteger(u64);
+
+#[derive(PartialEq, Debug)]
+enum CreationError {
+    Negative,
+    Zero,
+}
+
+impl PositiveNonzeroInteger {
+    fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
+        match value {
+            x if x < 0 => Err(CreationError::Negative),
+            x if x == 0 => Err(CreationError::Zero),
+            x => Ok(PositiveNonzeroInteger(x as u64))
+        }
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_parse_error() {
+        // We can't construct a ParseIntError, so we have to pattern match.
+        assert!(matches!(
+            parse_pos_nonzero("not a number"),
+            Err(ParsePosNonzeroError::ParseInt(_))
+        ));
+    }
+
+    #[test]
+    fn test_negative() {
+        assert_eq!(
+            parse_pos_nonzero("-555"),
+            Err(ParsePosNonzeroError::Creation(CreationError::Negative))
+        );
+    }
+
+    #[test]
+    fn test_zero() {
+        assert_eq!(
+            parse_pos_nonzero("0"),
+            Err(ParsePosNonzeroError::Creation(CreationError::Zero))
+        );
+    }
+
+    #[test]
+    fn test_positive() {
+        let x = PositiveNonzeroInteger::new(42);
+        assert!(x.is_ok());
+        assert_eq!(parse_pos_nonzero("42"), Ok(x.unwrap()));
+    }
+} 
