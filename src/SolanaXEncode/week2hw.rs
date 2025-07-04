@@ -1912,12 +1912,72 @@
 // I AM NOT DONE
 
 // TODO: Complete this use statement
-use std::time::SystemTime;
-use std::time::UNIX_EPOCH;
+// use std::time::SystemTime;
+// use std::time::UNIX_EPOCH;
 
-fn main() {
-    match SystemTime::now().duration_since(UNIX_EPOCH) {
-        Ok(n) => println!("1970-01-01 00:00:00 UTC was {} seconds ago!", n.as_secs()),
-        Err(_) => panic!("SystemTime before UNIX EPOCH!"),
+// fn main() {
+//     match SystemTime::now().duration_since(UNIX_EPOCH) {
+//         Ok(n) => println!("1970-01-01 00:00:00 UTC was {} seconds ago!", n.as_secs()),
+//         Err(_) => panic!("SystemTime before UNIX EPOCH!"),
+//     }
+// }
+
+// tests1.rs
+// Tests are important to ensure that your code does what you think it should do.
+// Tests can be run on this file with the following command:
+// rustlings run tests1
+
+// This test has a problem with it -- make the test compile! Make the test
+// pass! Make the test fail! Execute `rustlings hint tests1` for hints :)
+
+// I AM NOT DONE
+
+// #[cfg(test)]
+// mod tests {
+//     #[test]
+//         fn you_can_assert() {
+//             assert!(3 > 4);
+//     }
+// }
+
+// tests2.rs
+// This test has a problem with it -- make the test compile! Make the test
+// pass! Make the test fail! Execute `rustlings hint tests2` for hints :)
+
+// I AM NOT DONE
+
+// #[cfg(test)]
+// mod tests {
+//     #[test]
+//     fn you_can_assert_eq() {
+//         assert_eq!(5,5);
+//     }
+// }
+
+
+// tests3.rs
+// This test isn't testing our function -- make it do that in such a way that
+// the test passes. Then write a second test that tests whether we get the result
+// we expect to get when we call `is_even(5)`.
+// Execute `rustlings hint tests3` for hints :)
+
+// I AM NOT DONE
+
+pub fn is_even(num: i32) -> bool {
+    num % 2 == 0
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn is_true_when_even() {
+        assert!(is_even(4));
+    }
+
+    #[test]
+    fn is_false_when_odd() {
+        assert!(!is_even(5));
     }
 }
