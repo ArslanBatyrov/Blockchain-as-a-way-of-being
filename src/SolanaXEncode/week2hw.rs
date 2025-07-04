@@ -1687,3 +1687,23 @@
 // }
 
 // I was not able to solve error_hadling6.rs, so I decided to revise error handling in the rust book
+
+// Next: Matching on Different errors
+
+use std::fs::File;
+use std::io::ErrorKind;
+
+fn main(){
+    let greeting_file_open = File::open("hello.txt");
+    let greeting_file = match greeting_file_open {
+        Ok(file) => file,
+        Err(error) => match error.kind() {
+            ErrorKind::NotFound => match File::create {
+                Ok(fc) => fc,
+                Err(e) => panic!("Problem creating file {e:?}"),
+            },
+            _=>{ panic!("Problem opening the file: {error:?}");
+        }
+        },
+    };
+}
