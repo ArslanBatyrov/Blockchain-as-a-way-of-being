@@ -1755,92 +1755,116 @@
 
 // I AM NOT DONE
 
-use std::num::ParseIntError;
+// use std::num::ParseIntError;
 
-// This is a custom error type that we will be using in `parse_pos_nonzero()`.
-#[derive(PartialEq, Debug)]
-enum ParsePosNonzeroError {
-    Creation(CreationError),
-    ParseInt(ParseIntError)
-}
+// // This is a custom error type that we will be using in `parse_pos_nonzero()`.
+// #[derive(PartialEq, Debug)]
+// enum ParsePosNonzeroError {
+//     Creation(CreationError),
+//     ParseInt(ParseIntError)
+// }
 
-impl From<ParseIntError> for ParsePosNonzeroError {
-    fn from(err: ParseIntError) -> Self {
-        ParsePosNonzeroError::ParseInt(err)
-    }
-}
+// impl From<ParseIntError> for ParsePosNonzeroError {
+//     fn from(err: ParseIntError) -> Self {
+//         ParsePosNonzeroError::ParseInt(err)
+//     }
+// }
 
-impl From<CreationError> for ParsePosNonzeroError {
-    fn from(err: CreationError) -> Self {
-        ParsePosNonzeroError::Creation(err)
-    }
-}
+// impl From<CreationError> for ParsePosNonzeroError {
+//     fn from(err: CreationError) -> Self {
+//         ParsePosNonzeroError::Creation(err)
+//     }
+// }
 
-fn parse_pos_nonzero(s: &str)
-    -> Result<PositiveNonzeroInteger, ParsePosNonzeroError>
-{
-    let x: i64 = s.parse()?;
-    let value = PositiveNonzeroInteger::new(x)?;
-    Ok(value)
+// fn parse_pos_nonzero(s: &str)
+//     -> Result<PositiveNonzeroInteger, ParsePosNonzeroError>
+// {
+//     let x: i64 = s.parse()?;
+//     let value = PositiveNonzeroInteger::new(x)?;
+//     Ok(value)
    
-    // PositiveNonzeroInteger::new(x)
-    //     .map_err(ParsePosNonzeroError::from_creation)
-}
+//     // PositiveNonzeroInteger::new(x)
+//     //     .map_err(ParsePosNonzeroError::from_creation)
+// }
 
-// Don't change anything below this line.
+// // Don't change anything below this line.
 
-#[derive(PartialEq, Debug)]
-struct PositiveNonzeroInteger(u64);
+// #[derive(PartialEq, Debug)]
+// struct PositiveNonzeroInteger(u64);
 
-#[derive(PartialEq, Debug)]
-enum CreationError {
-    Negative,
-    Zero,
-}
+// #[derive(PartialEq, Debug)]
+// enum CreationError {
+//     Negative,
+//     Zero,
+// }
 
-impl PositiveNonzeroInteger {
-    fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
-        match value {
-            x if x < 0 => Err(CreationError::Negative),
-            x if x == 0 => Err(CreationError::Zero),
-            x => Ok(PositiveNonzeroInteger(x as u64))
-        }
+// impl PositiveNonzeroInteger {
+//     fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
+//         match value {
+//             x if x < 0 => Err(CreationError::Negative),
+//             x if x == 0 => Err(CreationError::Zero),
+//             x => Ok(PositiveNonzeroInteger(x as u64))
+//         }
+//     }
+// }
+
+// #[cfg(test)]
+// mod test {
+//     use super::*;
+
+//     #[test]
+//     fn test_parse_error() {
+//         // We can't construct a ParseIntError, so we have to pattern match.
+//         assert!(matches!(
+//             parse_pos_nonzero("not a number"),
+//             Err(ParsePosNonzeroError::ParseInt(_))
+//         ));
+//     }
+
+//     #[test]
+//     fn test_negative() {
+//         assert_eq!(
+//             parse_pos_nonzero("-555"),
+//             Err(ParsePosNonzeroError::Creation(CreationError::Negative))
+//         );
+//     }
+
+//     #[test]
+//     fn test_zero() {
+//         assert_eq!(
+//             parse_pos_nonzero("0"),
+//             Err(ParsePosNonzeroError::Creation(CreationError::Zero))
+//         );
+//     }
+
+//     #[test]
+//     fn test_positive() {
+//         let x = PositiveNonzeroInteger::new(42);
+//         assert!(x.is_ok());
+//         assert_eq!(parse_pos_nonzero("42"), Ok(x.unwrap()));
+//     }
+// } 
+
+
+// Next: Modules.
+
+// modules1.rs
+// Make me compile! Execute `rustlings hint modules1` for hints :)
+
+// I AM NOT DONE
+
+mod sausage_factory {
+    // Don't let anybody outside of this module see this!
+    fn get_secret_recipe() -> String {
+        String::from("Ginger")
+    }
+
+    pub fn make_sausage() {
+        get_secret_recipe();
+        println!("sausage!");
     }
 }
 
-#[cfg(test)]
-mod test {
-    use super::*;
-
-    #[test]
-    fn test_parse_error() {
-        // We can't construct a ParseIntError, so we have to pattern match.
-        assert!(matches!(
-            parse_pos_nonzero("not a number"),
-            Err(ParsePosNonzeroError::ParseInt(_))
-        ));
-    }
-
-    #[test]
-    fn test_negative() {
-        assert_eq!(
-            parse_pos_nonzero("-555"),
-            Err(ParsePosNonzeroError::Creation(CreationError::Negative))
-        );
-    }
-
-    #[test]
-    fn test_zero() {
-        assert_eq!(
-            parse_pos_nonzero("0"),
-            Err(ParsePosNonzeroError::Creation(CreationError::Zero))
-        );
-    }
-
-    #[test]
-    fn test_positive() {
-        let x = PositiveNonzeroInteger::new(42);
-        assert!(x.is_ok());
-        assert_eq!(parse_pos_nonzero("42"), Ok(x.unwrap()));
-    }
-} 
+fn main() {
+    sausage_factory::make_sausage();
+}
