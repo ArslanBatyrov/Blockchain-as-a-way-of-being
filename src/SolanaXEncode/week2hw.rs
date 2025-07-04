@@ -1876,27 +1876,48 @@
 
 // I AM NOT DONE
 
-mod delicious_snacks {
+// mod delicious_snacks {
 
-    // TODO: Fix these use statements
-    pub use self::fruits::PEAR as fruit;
-    pub use self::veggies::CUCUMBER as veggie;
+//     // TODO: Fix these use statements
+//     pub use self::fruits::PEAR as fruit;
+//     pub use self::veggies::CUCUMBER as veggie;
 
-    mod fruits {
-        pub const PEAR: &'static str = "Pear";
-        pub const APPLE: &'static str = "Apple";
-    }
+//     mod fruits {
+//         pub const PEAR: &'static str = "Pear";
+//         pub const APPLE: &'static str = "Apple";
+//     }
 
-    mod veggies {
-        pub const CUCUMBER: &'static str = "Cucumber";
-        pub const CARROT: &'static str = "Carrot";
-    }
-}
+//     mod veggies {
+//         pub const CUCUMBER: &'static str = "Cucumber";
+//         pub const CARROT: &'static str = "Carrot";
+//     }
+// }
+
+// fn main() {
+//     println!(
+//         "favorite snacks: {} and {}",
+//         delicious_snacks::fruit,
+//         delicious_snacks::veggie
+//     );
+// }
+
+
+// modules3.rs
+// You can use the 'use' keyword to bring module paths from modules from anywhere
+// and especially from the Rust standard library into your scope.
+// Bring SystemTime and UNIX_EPOCH
+// from the std::time module. Bonus style points if you can do it with one line!
+// Make me compile! Execute `rustlings hint modules3` for hints :)
+
+// I AM NOT DONE
+
+// TODO: Complete this use statement
+use std::time::SystemTime;
+use std::time::UNIX_EPOCH;
 
 fn main() {
-    println!(
-        "favorite snacks: {} and {}",
-        delicious_snacks::fruit,
-        delicious_snacks::veggie
-    );
+    match SystemTime::now().duration_since(UNIX_EPOCH) {
+        Ok(n) => println!("1970-01-01 00:00:00 UTC was {} seconds ago!", n.as_secs()),
+        Err(_) => panic!("SystemTime before UNIX EPOCH!"),
+    }
 }
