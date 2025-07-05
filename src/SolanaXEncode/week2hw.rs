@@ -2045,27 +2045,29 @@
 
 // I AM NOT DONE
 
-trait AppendBar {
-    fn append_bar(self) -> Self;
-}
+// trait AppendBar {
+//     fn append_bar(self) -> Self;
+// }
 
-impl AppendBar for Vec<String>{
-    fn append_bar(mut self) -> Vec<String> {
-        for s in &mut self {
-            s.push_str("Bar");
-        }
-        self
-    }
-}
+// impl AppendBar for Vec<String>{
+//     fn append_bar(mut self) -> Vec<String> {
+//         for s in &mut self {
+//             s.push_str("Bar");
+//         }
+//         self
+//     }
+// }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
 
-    #[test]
-    fn is_vec_pop_eq_bar() {
-        let mut foo = vec![String::from("Foo")].append_bar();
-        assert_eq!(foo.pop().unwrap(), String::from("Bar"));
-        assert_eq!(foo.pop().unwrap(), String::from("Foo"));
-    }
-}
+//     #[test]
+//     fn is_vec_pop_eq_bar() {
+//         let mut foo = vec![String::from("Foo")].append_bar();
+//         assert_eq!(foo.pop().unwrap(), String::from("Bar"));
+//         assert_eq!(foo.pop().unwrap(), String::from("Foo"));
+//     }
+// }
+
+// I minted 10k tokens using solana cli and a local validator
