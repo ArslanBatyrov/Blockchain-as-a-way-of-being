@@ -55,6 +55,10 @@ path = "src/SolanaXEncode/week2hw.rs"
 name = "week3hw"  
 path = "src/SolanaXEncode/week3hw.rs"
 
+[[bin]]
+name = "week3project1"  
+path = "src/SolanaXEncode/week3project1.rs"
+
 [dependencies]
 rand = "0.8.5"
 serde        = { version = "1.0", features = ["derive"] }
